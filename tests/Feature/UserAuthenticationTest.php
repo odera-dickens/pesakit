@@ -8,7 +8,7 @@ use App\Models\User;
 
 class UserAuthenticationTest extends TestCase
 {
-    use RefreshDatabase;
+    //use RefreshDatabase;
     /**
      * A basic unit test example.
      *
@@ -25,7 +25,7 @@ class UserAuthenticationTest extends TestCase
      */
     public function test_that_a_user_can_register()
     {
-        $this->withExceptionHandling();
+        $this->withoutExceptionHandling();
         $payload = [
             'name' => 'Dickens Odera',
             'email' => 'dickensodera9@gmail.com',

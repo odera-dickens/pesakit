@@ -29,7 +29,7 @@ class RegisterController extends Controller
         
         if($validator->fails())
         {
-            return response()->json(['success' => false,'message'=>$validator->errors()->all()], 400);
+            return response()->json(['success' => false,'errors'=>$validator->errors()->all()], 422);
         }else{
             $data = array(
                 'name' => $request['name'],
@@ -42,7 +42,7 @@ class RegisterController extends Controller
                 $token = $newUser->createToken('authToken')->accessToken;
                 return response()->json(['success' => true, 'message' => 'You have been successfully registered', 'data' => $newUser,'access_token' => $token], 201);
             }else{
-                return response()->json(['success' => false, 'message' => 'Failed to register'], 500);
+                return response()->json(['success' => false, 'error' => 'Failed to register'], 500);
             }
         }
     }
