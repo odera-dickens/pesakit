@@ -25,6 +25,6 @@ Route::group(['prefix'=>'/v1/user','as'=>'user.api.'], function(){
     //protected routes with api middleware
     Route::group(['middleware'=> 'auth:api'], function(){
         Route::post('/logout',[LoginController::class,'logout'])->name('logout');
-        Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
+        Route::get('/profile',[ProfileController::class,'getProfile'])->name('profile');
     });
 });
