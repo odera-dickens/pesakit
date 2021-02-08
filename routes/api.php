@@ -21,4 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix'=>'/v1/user','as'=>'user.api.'], function(){
     Route::post('/register',[RegisterController::class,'register'])->name('register');
     Route::post('/login',[LoginController::class,'login'])->name('login');
+    //protected routes with api middleware
+    Route::group(['middelware'=> 'auth:api'], function(){
+        Route::post('/logout',[LoginController::class,'logout'])->name('logout');
+    });
 });
