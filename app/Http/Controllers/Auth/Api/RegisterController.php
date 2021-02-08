@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -26,10 +27,10 @@ class RegisterController extends Controller
             'password' => 'required|same:password_confirmation',
             'password_confirmation' => 'required'
         ]);
-        
+
         if($validator->fails())
         {
-            return response()->json(['success' => false,'errors'=>$validator->errors()->all()], 422);
+            return response()->json(['success' => false,'errors'=>$validator->errors()->all()], 400);
         }else{
             $data = array(
                 'name' => $request['name'],
@@ -45,5 +46,6 @@ class RegisterController extends Controller
                 return response()->json(['success' => false, 'error' => 'Failed to register'], 500);
             }
         }
+
     }
 }

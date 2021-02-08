@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Artisan;
 
 abstract class TestCase extends BaseTestCase
 {
-    use CreatesApplication, DatabaseMigrations;
+    use CreatesApplication;//DatabaseMigrations;
 
     public function setUp(): void
     {
