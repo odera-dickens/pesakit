@@ -12,7 +12,7 @@ class ProfileController extends Controller
 {
     public function getProfile()
     {
-        if(!Auth::guard('api')->user())
+        if(!Auth::guard('api')->check())
         {
             return response(['error' => 'Unauthorized'], 403);
         }

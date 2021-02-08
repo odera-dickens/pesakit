@@ -21,7 +21,7 @@ class ProfileResource extends JsonResource
             'email' => $this->email,
             'phone' => $this->phone,
             'role' => $this->role,
-            'created_at' => Carbon::parse($this->updated_at)->format('d/m/Y')
+            'date_of_joining' => Carbon::parse($this->updated_at)->format('d/m/Y')
         ];
     }
 }
