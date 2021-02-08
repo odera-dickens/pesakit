@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Auth;
 
@@ -12,7 +13,7 @@ class LoginController extends Controller
 {
     public function __construct()
     {
-        $this->middeware('guest')->except('logout');
+        $this->middleware('guest')->except('logout');
     }
     public function login(Request $request)
     {
@@ -33,7 +34,7 @@ class LoginController extends Controller
         ));
         if($validator->fails())
         {
-            return response(['errors'=> $validator->errors()->all()], 422);
+            return response(['success' => false,'errors'=> $validator->errors()->all()], 422);
         }
         $user = User::where('email','=',$request->email)->first();
         if($user)
@@ -41,12 +42,12 @@ class LoginController extends Controller
             if(Hash::check($request->password, $user->password))
             {
                 $token = $user->createToken('access_token')->accessToken;
-                return response(['token' => $token],200 );
+                return response(['success' => true,'access_token' => $token,'message'=>'You have successfully logged in'],200 );
             }else{
-                return response(['message' => 'Invalid password'], 422);
+                return response(['success' => false,'message' => 'Invalid password'], 422);
             }
         }else{
-            return response(['message' => 'User does not exist', 422]);
+            return response(['success' => false,'message' => 'User does not exist', 422]);
         }
     }
     /**
@@ -56,6 +57,6 @@ class LoginController extends Controller
     {
         $token = $request->user()->token();
         $token->revoke();
-        return response(['message' => 'You have been successfully logged out'], 200);
+        return response(['success' => true,'message' => 'You have been successfully logged out'], 200);
     }
 }
