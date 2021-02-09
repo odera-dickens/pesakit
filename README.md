@@ -36,7 +36,7 @@ php artisan passport:install
 ### User Registration
 ```
 METHOD: POST
-Endpoint: **/api/v1/user/register**
+Endpoint: /api/v1/user/register
 Params: 
 1. name (required)
 2. email (required)
