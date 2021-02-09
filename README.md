@@ -66,7 +66,7 @@ Endpoint: **/api/v1/user/profile**
 Params:  
 1. Bearer-Token
 ```
-# ADMIN Endpoints (Web)
+## ADMIN Endpoints (Web)
 ```
 /login
 /admin/dashboard
