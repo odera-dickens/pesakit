@@ -23,5 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //admin routes
 Route::group(['middleware'=> 'admin','prefix'=>'admin','as' => 'admin.'], function(){
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
-    Route::get('/users/{user}',[AdminController::class,'index'])->name('user.profile');
+    Route::get('/users/{user}/profile',[AdminController::class,'getUser'])->name('user.profile');
 });

@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header mb-3">{{ __('Admin Dashboard') }}</div>
-                <div class="card-title text-center text-uppercase">Users</div>
+                <div class="card-title text-center text-uppercase">User Profile</div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -15,7 +15,7 @@
                     @endif
                     <div class="table">
                         <table class="table-responsive table-stripped">
-                            @if(isset($users))
+                            @if(isset($user))
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -26,18 +26,20 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            @foreach($users  as $user)
-                                <tbody>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
-                                    <td>{{ $user->role }}</td>
-                                    <td><a href="{{ route('admin.user.profile',['user'=> $user->id ]) }}" class="btn btn-primary btn-lg">View</a></td>
-                                </tbody>
-                            @endforeach
+                            <tbody>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->phone }}</td>
+                                <td>{{ $user->role }}</td>
+                                <td class="btn-group btn-group-sm">
+                                    <a href="#" class="btn btn-primary btn-lg">Edit</a>
+                                    <a href="#" class="btn btn-danger btn-lg">Detele</a>
+                                </td>
+                            </tbody>
                             @endif
                         </table>
+                        <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-success"><i class="fa fa-arrow-back">Back</i></a>
                     </div>    
                     
                 </div>

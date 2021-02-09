@@ -15,4 +15,8 @@ class AdminController extends Controller
         });
         return view('admin.dashboard', compact('users', $filteredUsers));
     }
+    public function getUser(User $user)
+    {
+        return view('admin.user.index',compact('user',$user));
+    }
 }
