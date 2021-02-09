@@ -19,6 +19,7 @@ DB_DATABASE=<your_new_db>
 ```
 php artisan:key generate
 php artisan migrate
+php artisan db:seed (to create an admin user)
 ```
 ## npm Set Up
 ```
@@ -69,6 +70,7 @@ Params:
 # Web Endpoints
 ## Admin
 ```
+Sample Admin Account : { email: admin@test.com, password: password }
 /login
 /admin/dashboard
 /admin/users
