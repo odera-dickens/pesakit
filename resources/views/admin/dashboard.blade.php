@@ -13,33 +13,8 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="table">
-                        <table class="table-responsive table-stripped">
-                            @if(isset($users))
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Role</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            @foreach($users  as $user)
-                                <tbody>
-                                    <td>{{ $user->id }}</td>
-                                    <td>{{ $user->name }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->phone }}</td>
-                                    <td>{{ $user->role }}</td>
-                                    <td><a href="{{ route('admin.user.profile',['user'=> $user->id ]) }}" class="btn btn-primary btn-lg">View</a></td>
-                                </tbody>
-                            @endforeach
-                            @endif
-                        </table>
-                    </div>    
-                    
+                    <p> {{ __('Welcome '. auth()->user()->name) }}</p>
+                    <p><a href="{{ route('admin.users.index') }}" class="btn btn-primary btn-lg">Click Here to view users</a></p>
                 </div>
             </div>
         </div>

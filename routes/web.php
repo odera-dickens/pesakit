@@ -21,11 +21,12 @@ Route::get('/', function () {
 Auth::routes();
 
 //admin routes
-Route::group(['middleware'=> 'admin','prefix'=>'admin','as' => 'admin.'], function(){
+Route::group(['middleware'=>['auth','admin'],'prefix'=>'admin','as' => 'admin.'], function(){
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
+    Route::get('/users',[AdminController::class,'getUsers'])->name('users.index');
     Route::get('/users/{user}/profile',[AdminController::class,'getUser'])->name('user.profile');
 });
 //User routes
-Route::group(['prefix'=>'user', 'as'=>'user.'], function(){
+Route::group(['middleware'=>'auth','prefix'=>'user', 'as'=>'user.'], function(){
     Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
 });

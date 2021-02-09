@@ -16,11 +16,9 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::user()->role === 'admin')
-        {
-            //return response(['message' => 'Unauthorized'], 401);
-            return redirect(route('login'));
+        if(Auth::user()->role == 'admin'){
+            return $next($request);
         }
-        return $next($request);
+        return redirect('login');
     }
 }
