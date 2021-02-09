@@ -15,7 +15,7 @@ class AdminController extends Controller
     {
         $users = User::all();
         $filteredUsers = $users->filter(function($user){
-            return $user->role = 'user';
+            return $user->role == 'user';
         });
         return view('admin.users.index', compact('users', $filteredUsers));
     }
