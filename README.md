@@ -25,5 +25,9 @@ php artisan migrate
 npm install
 npm run dev
 ```
-## The API Description
+## API Authentication Support
 This project uses [Laravel Passport](https://laravel.com/docs/8.x/passport) for the API Authentication
+### Passport Accest Tokens
+```
+php artisan passport:install
+```
