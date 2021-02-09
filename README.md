@@ -28,6 +28,48 @@ npm run dev
 ## API Authentication Support
 This project uses [Laravel Passport](https://laravel.com/docs/8.x/passport) for the API Authentication
 ### Passport Accest Tokens
+To create client access tokens for accessing the api endpoints when testing, run the following command
 ```
 php artisan passport:install
+```
+# API Endpoints
+### User Registration
+```
+METHOD: **POST**
+Endpoint: **/api/v1/user/register**
+Params: 
+1. name (required)
+2. email (required)
+3. phone (required)
+4. password (required)
+5. password_confirmation (required)
+```
+### User Login
+```
+METHOD : **POST**
+Endpoint: **/api/v1/user/login**
+Params:  
+1. email (required)
+2. password (required)
+```
+### User Logout
+```
+METHOD : **POST**
+Endpoint: **/api/v1/user/logout**
+Params:  
+1. Bearer-Token
+```
+### User Profile Details
+```
+METHOD : **POST**
+Endpoint: **/api/v1/user/profile**
+Params:  
+1. Bearer-Token
+```
+# ADMIN Endpoints (Web)
+```
+/login
+/admin/dashboard
+/admin/users
+/admin/users/{user}/profile
 ```
