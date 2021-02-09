@@ -66,10 +66,16 @@ Endpoint: /api/v1/user/profile
 Params:  
 1. Bearer-Token
 ```
-## ADMIN Endpoints (Web)
+# Web Endpoints
+## Admin
 ```
 /login
 /admin/dashboard
 /admin/users
 /admin/users/{user}/profile
+```
+## User
+```
+/login
+/user/dashboard
 ```
