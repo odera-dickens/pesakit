@@ -9,13 +9,13 @@ git clone https://github.com/odera-dickens/pesakit.git <your_preffered_app_name>
 cd <your_preffered_app_name>
 composer install
 ```
-## Set Up a database
+## Database Setup
 ```
 cp .env.example .env
 Create a database at your local db server then at the created .env file, add the following 
 DB_DATABASE=<your_new_db>
 ```
-## Run Configurations
+## Database Configurations
 ```
 php artisan:key generate
 php artisan migrate
