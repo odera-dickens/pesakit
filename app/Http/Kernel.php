@@ -22,8 +22,8 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         //To ensure these are run on every request
-        \App\Http\Middleware\ForceJsonOnApiResponse::class,
-        \App\Http\Middleware\Cors::class,
+        //\App\Http\Middleware\ForceJsonOnApiResponse::class,
+        //\App\Http\Middleware\Cors::class,
     ];
 
     /**
