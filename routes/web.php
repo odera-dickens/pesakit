@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +20,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //admin routes
 Route::group(['middleware'=> 'admin','prefix'=>'admin','as' => 'admin.'], function(){
     Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
     Route::get('/users/{user}/profile',[AdminController::class,'getUser'])->name('user.profile');
+});
+//User routes
+Route::group(['prefix'=>'user', 'as'=>'user.'], function(){
+    Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
 });
