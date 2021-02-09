@@ -39,7 +39,7 @@
                             </tbody>
                             @endif
                         </table>
-                        <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-success"><i class="fas fa-arrow-back">Back</i></a>
+                        <a href="{{ route('admin.users.index') }}" class="btn btn-lg btn-success"><i class="fas fa-arrow-back">Back</i></a>
                     </div>    
                     
                 </div>

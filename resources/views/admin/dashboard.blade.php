@@ -6,14 +6,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header mb-3">{{ __('Admin Dashboard') }}</div>
-                <div class="card-title text-center text-uppercase">Users</div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                    <p> {{ __('Welcome '. auth()->user()->name) }}</p>
                     <p><a href="{{ route('admin.users.index') }}" class="btn btn-primary btn-lg">Click Here to view users</a></p>
                 </div>
             </div>

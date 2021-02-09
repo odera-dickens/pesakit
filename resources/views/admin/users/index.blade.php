@@ -39,7 +39,7 @@
                             @endif
                         </table>
                     </div>    
-                    <a href="{{ route('admin.dashboard')}}" class="btn btn-sm btn-success">Go To Dashboard</a>
+                    <a href="{{ route('admin.dashboard')}}" class="btn btn-lg btn-success">Go To Dashboard</a>
                 </div>
             </div>
         </div>
