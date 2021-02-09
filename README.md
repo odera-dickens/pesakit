@@ -35,7 +35,7 @@ php artisan passport:install
 # API Endpoints
 ### User Registration
 ```
-METHOD: **POST**
+METHOD: POST
 Endpoint: **/api/v1/user/register**
 Params: 
 1. name (required)
@@ -46,23 +46,23 @@ Params:
 ```
 ### User Login
 ```
-METHOD : **POST**
-Endpoint: **/api/v1/user/login**
+METHOD : POST
+Endpoint: /api/v1/user/login
 Params:  
 1. email (required)
 2. password (required)
 ```
 ### User Logout
 ```
-METHOD : *POST*
-Endpoint: */api/v1/user/logout*
+METHOD : POST
+Endpoint: /api/v1/user/logout
 Params:  
 1. Bearer-Token
 ```
 ### User Profile Details
 ```
-METHOD : **POST**
-Endpoint: **/api/v1/user/profile**
+METHOD : POST
+Endpoint: /api/v1/user/profile
 Params:  
 1. Bearer-Token
 ```
