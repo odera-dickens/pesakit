@@ -61,7 +61,7 @@ Params:
 ```
 ### User Profile Details
 ```
-METHOD : POST
+METHOD : GET
 Endpoint: /api/v1/user/profile
 Params:  
 1. Bearer-Token
