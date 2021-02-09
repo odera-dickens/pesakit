@@ -38,7 +38,6 @@
                             </tbody>
                             @endif
                         </table>
-                        {{-- <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-success"><i class="fa fa-arrow-back">Back</i></a> --}}
                     </div>    
                     
                 </div>
