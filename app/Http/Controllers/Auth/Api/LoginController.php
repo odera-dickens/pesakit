@@ -41,13 +41,13 @@ class LoginController extends Controller
         {
             if(Hash::check($request->password, $user->password))
             {
-                $token = $user->createToken('access_token')->accessToken;
-                return response(['success' => true,'access_token' => $token,'message'=>'You have successfully logged in'],200 );
+                $token = $user->createToken('authToken')->accessToken;
+                return response(['success' => true,'access_token' => $token, 'data' => $user,'message'=>'You have successfully logged in'],200 );
             }else{
                 return response(['success' => false,'message' => 'Invalid password'], 422);
             }
         }else{
-            return response(['success' => false,'message' => 'User does not exist', 422]);
+            return response(['success' => false,'message' => 'User does not exist'], 422);
         }
     }
     /**

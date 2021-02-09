@@ -5,7 +5,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 //use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
 use App\Models\User;
-
+use Illuminate\Support\Facades\Hash;
 class UserAuthenticationTest extends TestCase
 {
     use RefreshDatabase;
@@ -63,5 +63,32 @@ class UserAuthenticationTest extends TestCase
                 'password_confirmation' => ['The password_confirmation field is required.']
             ]
         ]);
+    }
+    public function test_that_a_user_can_login()
+    {
+        $this->withoutExceptionHandling();
+        $user = [
+            'email' => 'test@test.com',
+            'password' => Hash::make('password')
+        ];
+        $response = $this->json('POST',route('user.api.login'),$user,['Accept' => 'application/json']);
+        //dd($response->getContent()); //user does not exist
+        $response->assertStatus(200);
+        $response->assertJsonStructure([
+            'success',
+            'access_token',
+            'data' => [
+                'id',
+                'name',
+                'email',
+                'email_verified_at',
+                'created_at',
+                'updated_at',
+                'phone',
+                'role',
+            ],
+            'message'
+        ]);
+        $response->assertAuthenticated();
     }
 }
