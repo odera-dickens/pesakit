@@ -1,7 +1,9 @@
 ## About
 
 This is a simple api that enables users to register, login and view their profile details. An admin is also able to login into their dashboard and view the list of registered users and their particular details
-
+## Prerequisites
+- Download and install [Composer](https://getcomposer.org/download/)
+- Download and install [Postman](https://www.postman.com/downloads/) for API Testing
 ## Installation
 Follow through the following steps setting up the application on your local development environment
 ```
