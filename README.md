@@ -54,8 +54,8 @@ Params:
 ```
 ### User Logout
 ```
-METHOD : **POST**
-Endpoint: **/api/v1/user/logout**
+METHOD : *POST*
+Endpoint: */api/v1/user/logout*
 Params:  
 1. Bearer-Token
 ```
