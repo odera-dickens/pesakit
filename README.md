@@ -81,3 +81,5 @@ Sample Admin Account : { email: admin@test.com, password: password }
 /login
 /user/dashboard
 ```
+# Testing The API
+In order to effectively test the api, ensure you have [Postman](https://www.postman.com/downloads/) installed on your machine
