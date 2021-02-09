@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('user.api.register') }}">
+                    <form method="POST" action="{{ route('user.api.register') }}"> <!-- This endpooint is for the api, had to do a bit of the testing on the web-->
                         @csrf
 
                         <div class="form-group row">
